@@ -1,0 +1,22 @@
+<h2> Signup </h2>
+<div class="row">
+  <form class="col s12" action="<%= sails.getRouteFor('UserController.signup').url %>" method="POST">
+    <div class="input-field col s12">
+      <input placeholder="Username" id="username" type="text" class="validate" name="username">
+      <label for="first_name">Username</label>
+    </div>
+    <div class="input-field col s12">
+      <input placeholder="Password" id="password" type="password" class="validate" name="password">
+      <label for="password">Password</label>
+    </div>
+    <div class="input-field col s12">
+      <input placeholder="Password (Confirm)" id="password_confirm" type="password" class="validate" name="password_confirm">
+      <label for="password_confirm">Password (Confirm)</label>
+    </div>
+    <div class="col s12">
+      <button class="right btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-content">
+    <div class="row">
+      <% if (req.user) {%>
+        <p> <%= req.user.username %> </p>
+      <% } else { %>
+        <p> Not logged in </p>
+      <% } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resizer</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+  </head>
+
+  <body>
+    <nav role="navigation">
+      <div class="nav-wrapper container">
+        <a class="brand-logo"> Toto </a>
+        <ul class="right">
+          <% if (req.user) {%>
+            <li>
+              User: <%= req.user.username %>
+            </li>
+            <li>
+              <a href="/logout"> Logout </a>
+            </li>
+          <% } else {%>
+            <li>
+              <a href="/login"> Login </a>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <%- body %>
+    </div>
+
+    <!--TEMPLATES-->
+    <!--TEMPLATES END-->
+
+    <!--SCRIPTS-->
+    <script src="/dependencies/sails.io.js"></script>
+    <!--SCRIPTS END-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
