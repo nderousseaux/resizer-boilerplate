@@ -27,7 +27,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/john/resizer.git"
+    "url": "git://github.com/john/resizer-boilerplate.git"
   },
   "author": "john",
   "license": "",
