@@ -5,7 +5,7 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
-const bcrypt = require('bcrypt-nodejs');
+const bcrypt = require('bcrypt');
 
 module.exports = {
 
@@ -38,7 +38,7 @@ module.exports = {
   beforeCreate: function(user, cb){
     bcrypt.genSalt(10, (err, salt) => {
       if(err) { return cb(err); }
-      bcrypt.hash(user.password, salt, null, (err, hash) => {
+      bcrypt.hash(user.password, salt, (err, hash) => {
         if(err) { return cb(err); }
         user.password = hash;
         return cb();
