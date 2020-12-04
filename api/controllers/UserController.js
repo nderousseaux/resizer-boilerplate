@@ -11,7 +11,7 @@ module.exports = {
    * `UserController.login()`
    */
   login: async function (req, res) {
-    throw 'Not implemented';
+    password.authenticate('local', {successRedirect:"/", failureRedirect: "/login"})(req,res);
   },
 
   /**

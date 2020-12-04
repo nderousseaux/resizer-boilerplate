@@ -10,6 +10,8 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "bcrypt": "5.x",
     "grunt": "1.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "sails": "^1.4.0",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
