@@ -1,11 +1,12 @@
 const passport = require("passport");
-const UserController = require("../api/controllers/UserController");
+const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt')
 
 passport.serializeUser((user, cb) => cb(null, user.id));
 
-password.deserializeUser((id, cb) => User.findOne({id},cb));
+passport.deserializeUser((id, cb) => User.findOne({id},cb));
 
-password.use(new LocalStrategy({
+passport.use(new LocalStrategy({
   usernameField:'username',
   passwordField:'password',
 }, (username, password, cb) => {
@@ -17,7 +18,7 @@ password.use(new LocalStrategy({
       return cb(null, null, {message: 'Username not found'});
     }
 
-    bcrypt.compare(password, user.passport, (err, res) => {
+    bcrypt.compare(password, user.password, (err, res) => {
       if(err){
         return cb(err);
       }
@@ -29,4 +30,3 @@ password.use(new LocalStrategy({
     })
 	})
 }));
-//TODO: ecrire la policy pour empécher de se connecter sur / si pas connecté
