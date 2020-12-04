@@ -20,7 +20,8 @@ module.exports = {
    * `UserController.logout()`
    */
   logout: async function (req, res) {
-    throw 'Not implemented';
+    req.logout();
+    res.redirect("/login");
   },
 
   /**
