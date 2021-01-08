@@ -1,5 +1,5 @@
 FROM node:14
-LABEL author="Nathanaël Derousseaux <nathanael.derousseaux-lebert@etu.unistra.fr>"
+LABEL author="Nathanaël Derousseaux"
 
 ENV NODE_ENV=production
 
