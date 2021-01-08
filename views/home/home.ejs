@@ -2,7 +2,7 @@
   <div class="card-content">
     <div class="row">
       <% if (req.user) {%>
-        <p> <%= req.user.username %> </p>
+        <p> Hello <%= req.user.username %> ! Nice to meet you !</p>
       <% } else { %>
         <p> Not logged in </p>
       <% } %>
