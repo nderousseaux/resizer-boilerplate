@@ -5,8 +5,6 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
-const bcrypt = require('bcrypt');
-
 module.exports = {
 
   attributes: {
@@ -15,19 +13,19 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    username: {
+    name: {
       type: 'string',
       required: true
     },
 
-    password: {
+    path: {
       type: 'string',
       required: true
     },
-    images: {
-      collection: "image",
-      via: "uploader"
-    }
+
+    uploader: {
+      model: "user"
+    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -39,23 +37,6 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
   },
 
-  beforeCreate: function(user, cb){
-    bcrypt.genSalt(10, (err, salt) => {
-      if(err) { return cb(err); }
-      bcrypt.hash(user.password, salt, (err, hash) => {
-        if(err) { return cb(err); }
-        user.password = hash;
-        return cb();
-      });
-    });
-  },
-
-  signup: function(inputs, cb) {
-    User.create({
-      username: inputs.username,
-      password: inputs.password
-    })
-    .exec(cb);
-  }
+  
 };
 

@@ -1,0 +1,27 @@
+version: "3"
+services:
+  web:
+    build: .
+    environment: 
+      - NODE_ENV=development
+      - DATABASE_URL=mysql://root:rootPassword@mysql:3306/resizer
+      - REDIS_URL=redis://redis:6379
+      - S3_KEY=
+      - S3_SECRET=
+      - S3_BUCKET=
+      - S3_FOLDER=
+    ports:
+      - 1337:1337
+    command: "npm run dev"
+    volumes:
+      - ./:/app
+
+  mysql:
+    image: mysql:5.7
+    environment: 
+      - MYSQL_ROOT_PASSWORD=rootPassword
+      - MYSQL_DATABASE=resizer
+    volumes:
+      - ./_docker/mysql:/var/lib/mysql
+  redis:
+   image: redis
