@@ -22,11 +22,11 @@ module.exports.routes = {
   '/': 'HomeController.home',
   'get /login': { view: 'user/login' },
   'get /signup': { view: 'user/signup' },
-  'post /a©©': 'UserController.login',
+  'post /login': 'UserController.login',
   'post /signup': 'UserController.signup',
   '/logout': 'UserController.logout',
   'post /upload': 'ImageController.create',
-  'get /upload/:id': 'ImageControlleru.show'
+  'get /upload/:id': 'ImageController.show'
 
   /***************************************************************************
   *                                                                          *
