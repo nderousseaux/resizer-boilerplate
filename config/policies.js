@@ -8,9 +8,6 @@
  * https://sailsjs.com/docs/concepts/policies
  */
 
-const isLoggedIn = require("../api/policies/isLoggedIn");
-
-
 module.exports.policies = {
   UserController:{
     '*':true

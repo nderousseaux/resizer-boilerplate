@@ -1,0 +1,120 @@
+
+> resizer@0.0.0 test /app
+> npm run lint && npm run custom-tests && echo 'Done.'
+
+
+> resizer@0.0.0 lint /app
+> ./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'
+
+
+/app/api/controllers/ImageController.js
+  30:23   warning  Missing semicolon                              semi
+  31:9    warning  Missing semicolon                              semi
+  43:7    warning  Expected { after 'if' condition                curly
+  48:1    warning  Expected indentation of 8 spaces but found 10  indent
+  49:1    warning  Expected indentation of 8 spaces but found 10  indent
+  50:1    warning  Expected indentation of 8 spaces but found 10  indent
+  51:10   warning  Trailing spaces not allowed                    no-trailing-spaces
+  53:15   warning  Strings must use singlequote                   quotes
+  53:38   warning  Strings must use singlequote                   quotes
+  53:80   warning  Strings must use singlequote                   quotes
+  53:100  warning  Strings must use singlequote                   quotes
+  53:119  warning  Strings must use singlequote                   quotes
+  57:20   warning  Unexpected function expression                 prefer-arrow-callback
+  61:1    warning  Expected indentation of 4 spaces but found 2   indent
+  63:2    warning  Newline required at end of file but not found  eol-last
+  63:2    warning  Missing semicolon                              semi
+
+/app/api/controllers/UserController.js
+   8:26  warning  Strings must use singlequote  quotes
+  16:53  warning  Strings must use singlequote  quotes
+  16:75  warning  Strings must use singlequote  quotes
+  24:18  warning  Strings must use singlequote  quotes
+
+/app/api/models/Image.js
+  27:14  warning  Strings must use singlequote  quotes
+  40:1   warning  Trailing spaces not allowed   no-trailing-spaces
+
+/app/api/models/User.js
+  28:19  warning  Strings must use singlequote  quotes
+  29:12  warning  Strings must use singlequote  quotes
+
+/app/api/policies/isLoggedIn.js
+   4:1   warning  Expected indentation of 2 spaces but found 4   indent
+   5:1   warning  Expected indentation of 2 spaces but found 4   indent
+   6:1   warning  Expected indentation of 2 spaces but found 4   indent
+   7:1   warning  Expected indentation of 2 spaces but found 4   indent
+   8:1   warning  Expected indentation of 2 spaces but found 4   indent
+   9:1   warning  Expected indentation of 2 spaces but found 4   indent
+  10:1   warning  Expected indentation of 4 spaces but found 6   indent
+  11:1   warning  Expected indentation of 2 spaces but found 4   indent
+  12:1   warning  Trailing spaces not allowed                    no-trailing-spaces
+  13:1   warning  Expected indentation of 2 spaces but found 4   indent
+  14:1   warning  Expected indentation of 2 spaces but found 4   indent
+  15:1   warning  Expected indentation of 2 spaces but found 4   indent
+  15:25  warning  Strings must use singlequote                   quotes
+  17:1   warning  Trailing spaces not allowed                    no-trailing-spaces
+  18:1   warning  Expected indentation of 0 spaces but found 2   indent
+  18:5   warning  Newline required at end of file but not found  eol-last
+
+/app/config/passport.js
+   1:26  warning  Strings must use singlequote                      quotes
+   3:33  warning  Missing semicolon                                 semi
+  29:38  warning  Strings must use singlequote                      quotes
+  30:7   warning  Missing semicolon                                 semi
+  31:1   warning  Expected indentation of 2 spaces but found 1 tab  indent
+  31:4   warning  Missing semicolon                                 semi
+  32:5   warning  Newline required at end of file but not found     eol-last
+
+/app/config/policies.js
+  11:7   warning  'isLoggedIn' is assigned a value but never used. Allowed unused vars must match /^unused($|[A-Z].*$)/  no-unused-vars
+  11:28  warning  Strings must use singlequote                                                                           quotes
+
+/app/config/session.js
+  22:12  warning  Strings must use singlequote  quotes
+
+/app/knexfile.js
+  2:1  warning  Expected indentation of 2 spaces but found 4   indent
+  3:1  warning  Expected indentation of 2 spaces but found 4   indent
+  4:1  warning  Expected indentation of 0 spaces but found 2   indent
+  5:1  warning  Trailing spaces not allowed                    no-trailing-spaces
+  5:3  warning  Newline required at end of file but not found  eol-last
+
+/app/migrations/20210108150746_create_user_table.js
+   3:1   warning  Expected indentation of 2 spaces but found 4   indent
+   3:44  warning  Unexpected function expression                 prefer-arrow-callback
+   4:1   warning  Expected indentation of 4 spaces but found 8   indent
+   5:1   warning  Expected indentation of 4 spaces but found 8   indent
+   6:1   warning  Expected indentation of 4 spaces but found 8   indent
+   7:1   warning  Expected indentation of 4 spaces but found 8   indent
+   8:1   warning  Expected indentation of 4 spaces but found 8   indent
+   9:1   warning  Expected indentation of 2 spaces but found 4   indent
+   9:7   warning  Missing semicolon                              semi
+  10:1   warning  Expected indentation of 0 spaces but found 2   indent
+  11:1   warning  Trailing spaces not allowed                    no-trailing-spaces
+  14:1   warning  Expected indentation of 2 spaces but found 4   indent
+  15:3   warning  Newline required at end of file but not found  eol-last
+
+/app/migrations/20210108155657_create_images_table.js
+   2:1   warning  Expected indentation of 2 spaces but found 4   indent
+   2:36  warning  Strings must use singlequote                   quotes
+   2:45  warning  Unexpected function expression                 prefer-arrow-callback
+   3:1   warning  Expected indentation of 4 spaces but found 8   indent
+   4:1   warning  Expected indentation of 4 spaces but found 8   indent
+   4:22  warning  Strings must use singlequote                   quotes
+   5:1   warning  Expected indentation of 4 spaces but found 8   indent
+   5:22  warning  Strings must use singlequote                   quotes
+   6:1   warning  Expected indentation of 4 spaces but found 8   indent
+   6:23  warning  Strings must use singlequote                   quotes
+   7:1   warning  Expected indentation of 4 spaces but found 8   indent
+   7:26  warning  Strings must use singlequote                   quotes
+   8:1   warning  Expected indentation of 4 spaces but found 8   indent
+   8:26  warning  Strings must use singlequote                   quotes
+   9:1   warning  Expected indentation of 2 spaces but found 4   indent
+   9:7   warning  Missing semicolon                              semi
+  13:32  warning  Strings must use singlequote                   quotes
+  14:3   warning  Newline required at end of file but not found  eol-last
+
+✖ 86 problems (0 errors, 86 warnings)
+  0 errors and 85 warnings potentially fixable with the `--fix` option.
+
