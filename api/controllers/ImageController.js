@@ -1,3 +1,6 @@
+const queue = require('./Resize').imageQueue;
+
+
 module.exports = {
   create: function (req, res) {
     req.file('image').upload({
@@ -12,7 +15,7 @@ module.exports = {
       }
 
 
-    },function whenDone(err, uploadedFiles) {
+    }, async function whenDone(err, uploadedFiles) {
       if (err) {
         return res.serverError(err);
       }
@@ -21,14 +24,20 @@ module.exports = {
       if (uploadedFiles.length === 0){
         return res.badRequest('No file was uploaded');
       }
-
-      Image.create({
+      let image = await Image.create({
         name: req.body.name,
-        path: uploadedFiles[0].f,
+        path: uploadedFiles[0].fd,
         uploader: req.user.id
-      }).fetch().then(img => {
-        res.ok(img.id);
-      });
+      }).fetch();
+
+      res.statusCode = 202;
+      res.send('' + image.id);
+
+      let ope = await Operation.create({
+        status: 'running',
+        idImage: image.id
+      }).fetch();
+      queue.add({ id: ope.id, image: uploadedFiles[0].fd });
     });
   },
 
