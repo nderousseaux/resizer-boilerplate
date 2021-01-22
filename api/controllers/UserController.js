@@ -5,7 +5,7 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const passport = require("passport");
+const passport = require('passport');
 
 module.exports = {
 
@@ -13,7 +13,7 @@ module.exports = {
    * `UserController.login()`
    */
   login: async function (req, res) {
-    passport.authenticate('local', {successRedirect:"/", failureRedirect: "/login"})(req,res);
+    passport.authenticate('local', {successRedirect:'/', failureRedirect: '/login'})(req,res);
   },
 
   /**
@@ -21,7 +21,7 @@ module.exports = {
    */
   logout: async function (req, res) {
     req.logout();
-    res.redirect("/login");
+    res.redirect('/login');
   },
 
   /**

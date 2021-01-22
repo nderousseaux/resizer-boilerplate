@@ -1,6 +1,6 @@
-const passport = require("passport");
+const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 
 passport.serializeUser((user, cb) => cb(null, user.id));
 
@@ -26,7 +26,7 @@ passport.use(new LocalStrategy({
       if(!res){
         return cb(null, null, {message: 'invalid password'});
       }
-      return cb(null, user, {message:"login successful"});
-    })
-	})
+      return cb(null, user, {message:'login successful'});
+    });
+  });
 }));
